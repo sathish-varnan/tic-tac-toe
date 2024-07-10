@@ -1,6 +1,7 @@
 #ifndef BOARD_MAPPER
 #define BOARD_MAPPER
-#define BOARD_SIZE 9
+#define BOARD_ROW 3
+#define BOARD_COL 3
 
 enum class symbol
 {
@@ -9,8 +10,14 @@ enum class symbol
     N
 };
 
-symbol *initializeBoard(symbol *board);
-void resetBoard(symbol *board);
-void updateBoard(symbol *board, int POS, symbol sign);
-void printBoard(symbol *board);
+struct position
+{
+    int x;
+    int y;
+}
+
+void initializeBoard(symbol **board);
+void resetBoard(symbol **board);
+void updateBoard(symbol **board, position POS, symbol sign);
+void printBoard(symbol **board);
 #endif
